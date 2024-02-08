@@ -18,12 +18,13 @@
       "hash": "46e8968bfde4fb05a97d7170ad32795c6d2e0f2d"
     },
     "com.github.asus4.texture-source": {
-      "version": "file:../../TextureSource/Packages/com.github.asus4.texture-source",
+      "version": "0.2.1",
       "depth": 0,
-      "source": "local",
+      "source": "registry",
       "dependencies": {
         "com.unity.modules.video": "1.0.0"
-      }
+      },
+      "url": "https://registry.npmjs.com"
     },
     "com.unity.burst": {
       "version": "1.8.12",
