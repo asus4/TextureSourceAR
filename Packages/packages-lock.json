@@ -1,5 +1,22 @@
 {
   "dependencies": {
+    "com.cysharp.memorypack": {
+      "version": "https://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack#1.10.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2554e81f0315ddf835026940ccc4ba8175edfda3"
+    },
+    "com.github.asus4.arfoundationreplay": {
+      "version": "https://github.com/asus4/ARFoundationReplay.git?path=Packages/com.github.asus4.arfoundationreplay",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.arfoundation": "5.1.2",
+        "com.cysharp.memorypack": "1.10.0"
+      },
+      "hash": "46e8968bfde4fb05a97d7170ad32795c6d2e0f2d"
+    },
     "com.github.asus4.texture-source": {
       "version": "file:../../TextureSource/Packages/com.github.asus4.texture-source",
       "depth": 0,
