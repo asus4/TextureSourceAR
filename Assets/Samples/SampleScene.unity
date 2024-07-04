@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12729266, g: 0.13414232, b: 0.12114291, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,6 +425,7 @@ GameObject:
   - component: {fileID: 652966192}
   - component: {fileID: 652966191}
   - component: {fileID: 652966196}
+  - component: {fileID: 652966197}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -678,12 +678,29 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!114 &652966197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652966189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HumanSegmentationStencilMode: 0
+  m_HumanSegmentationDepthMode: 0
+  m_EnvironmentDepthMode: 3
+  m_EnvironmentDepthTemporalSmoothing: 1
+  m_OcclusionPreferenceMode: 0
 --- !u!1 &804858204
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5e5635fba104ec29475e42f3b5a517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 11400000, guid: 5c601e7be24d04ad6afc9f36d442b1fc, type: 2}
-  sourceForEditor: {fileID: 11400000, guid: 5c601e7be24d04ad6afc9f36d442b1fc, type: 2}
+  source: {fileID: 11400000, guid: 57e891f2ee65b460096f9f78a4fd106c, type: 2}
+  sourceForEditor: {fileID: 11400000, guid: 57e891f2ee65b460096f9f78a4fd106c, type: 2}
   trimToScreenAspect: 1
   OnTexture:
     m_PersistentCalls:

@@ -14,13 +14,23 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
-    "com.github.asus4.texture-source": {
-      "version": "file:/Users/ibu/Projects/OSS/TextureSource/Packages/com.github.asus4.texture-source",
+    "com.github.asus4.arfoundationreplay": {
+      "version": "https://github.com/asus4/ARFoundationReplay.git?path=Packages/com.github.asus4.arfoundationreplay#v0.2.2",
       "depth": 0,
-      "source": "local",
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.arfoundation": "5.1.4"
+      },
+      "hash": "10998050df209473c98422ae6c18da5da386fd8d"
+    },
+    "com.github.asus4.texture-source": {
+      "version": "0.3.1",
+      "depth": 0,
+      "source": "registry",
       "dependencies": {
         "com.unity.modules.video": "1.0.0"
-      }
+      },
+      "url": "https://registry.npmjs.com"
     },
     "com.unity.burst": {
       "version": "1.8.13",
