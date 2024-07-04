@@ -7,24 +7,20 @@
       "dependencies": {},
       "hash": "2554e81f0315ddf835026940ccc4ba8175edfda3"
     },
-    "com.github.asus4.arfoundationreplay": {
-      "version": "https://github.com/asus4/ARFoundationReplay.git?path=Packages/com.github.asus4.arfoundationreplay",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.xr.arfoundation": "5.1.2",
-        "com.cysharp.memorypack": "1.10.0"
-      },
-      "hash": "46e8968bfde4fb05a97d7170ad32795c6d2e0f2d"
-    },
-    "com.github.asus4.texture-source": {
-      "version": "0.2.1",
+    "com.github-glitchenzo.nugetforunity": {
+      "version": "4.1.1",
       "depth": 0,
       "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.github.asus4.texture-source": {
+      "version": "file:/Users/ibu/Projects/OSS/TextureSource/Packages/com.github.asus4.texture-source",
+      "depth": 0,
+      "source": "local",
       "dependencies": {
         "com.unity.modules.video": "1.0.0"
-      },
-      "url": "https://registry.npmjs.com"
+      }
     },
     "com.unity.burst": {
       "version": "1.8.13",
@@ -143,11 +139,11 @@
       }
     },
     "com.unity.xr.arcore": {
-      "version": "5.1.4",
+      "version": "5.1.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arfoundation": "5.1.4",
+        "com.unity.xr.arfoundation": "5.1.5",
         "com.unity.xr.core-utils": "2.1.0",
         "com.unity.xr.management": "4.0.1",
         "com.unity.modules.androidjni": "1.0.0",
@@ -156,8 +152,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arfoundation": {
-      "version": "5.1.4",
-      "depth": 0,
+      "version": "5.1.5",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0",
@@ -174,12 +170,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arkit": {
-      "version": "5.1.4",
+      "version": "5.1.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0",
-        "com.unity.xr.arfoundation": "5.1.4",
+        "com.unity.xr.arfoundation": "5.1.5",
         "com.unity.xr.core-utils": "2.1.0",
         "com.unity.xr.management": "4.0.1"
       },
