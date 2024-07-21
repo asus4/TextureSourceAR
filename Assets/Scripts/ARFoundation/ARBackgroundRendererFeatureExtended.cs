@@ -5,20 +5,29 @@ Modified from
 Licensed under the Unity Companion License for Unity-dependent projects (see [Unity Companion License](https://unity3d.com/legal/licenses/unity_companion_license)).
 */
 
-using System;
 using UnityEngine;
 using UnityEngine.Rendering;
+#if MODULE_URP_ENABLED
+using System;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.ARSubsystems;
+#else
+using ScriptableRendererFeature = UnityEngine.ScriptableObject;
+#endif
 
 namespace UnityEngine.XR.ARFoundation
 {
     /// <summary>
     /// A render feature for rendering the camera background for AR devices.
     /// </summary>
-    public class ARBackgroundRendererFeatureExtended : ScriptableRendererFeature
+    public sealed class ARBackgroundRendererFeatureExtended : ScriptableRendererFeature
     {
-        // #if MODULE_URP_ENABLED
+#if MODULE_URP_ENABLED
+        /// <summary>
+        /// The property ID for the global texture used to render the camera background.
+        /// </summary>
+        public static readonly int GlobalTextureID = Shader.PropertyToID("_ARBackgroundTexture");
+
         /// <summary>
         /// The scriptable render pass to be added to the renderer when the camera background is to be rendered.
         /// </summary>
@@ -97,7 +106,7 @@ namespace UnityEngine.XR.ARFoundation
             /// <summary>
             /// The name for the custom render pass which will display in graphics debugging tools.
             /// </summary>
-            const string k_CustomRenderPassName = "AR Background Pass (URP)";
+            const string k_CustomRenderPassName = "AR Background Pass Extended (URP)";
 
             /// <summary>
             /// The mesh for rendering the background material.
@@ -115,6 +124,8 @@ namespace UnityEngine.XR.ARFoundation
             /// ([CommandBuffer.SetInvertCulling](https://docs.unity3d.com/ScriptReference/Rendering.CommandBuffer.SetInvertCulling.html)).
             /// </summary>
             bool m_InvertCulling;
+
+            static readonly int m_tempRTNameID = Shader.PropertyToID("_ARBackgroundTmpRT");
 
             /// <summary>
             /// The projection matrix used to render the <see cref="mesh"/>.
@@ -167,6 +178,12 @@ namespace UnityEngine.XR.ARFoundation
                 cmd.SetViewProjectionMatrices(renderingData.cameraData.camera.worldToCameraMatrix,
                                               renderingData.cameraData.camera.projectionMatrix);
 
+                // Modified
+                // Expose the AR Camera Background texture to Global.
+                cmd.GetTemporaryRT(m_tempRTNameID, renderingData.cameraData.cameraTargetDescriptor);
+                cmd.Blit(BuiltinRenderTextureType.RenderTexture, m_tempRTNameID);
+                cmd.SetGlobalTexture(GlobalTextureID, m_tempRTNameID);
+
                 cmd.EndSample(k_CustomRenderPassName);
                 context.ExecuteCommandBuffer(cmd);
 
@@ -179,6 +196,7 @@ namespace UnityEngine.XR.ARFoundation
             /// <param name="commandBuffer">The command buffer for frame cleanup.</param>
             public override void FrameCleanup(CommandBuffer commandBuffer)
             {
+                commandBuffer.ReleaseTemporaryRT(m_tempRTNameID);
             }
         }
 
@@ -252,5 +270,6 @@ namespace UnityEngine.XR.ARFoundation
             /// <inheritdoc />
             protected override Mesh mesh => ARCameraBackgroundRenderingUtils.fullScreenFarClipMesh;
         }
+#endif // MODULE_URP_ENABLED
     }
 }
