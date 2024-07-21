@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public sealed class GlobalTextureListener : MonoBehaviour
 {
     [System.Serializable]
-    public class TextureEvent : UnityEngine.Events.UnityEvent<Texture> { }
+    public class TextureEvent : UnityEvent<Texture> { }
+    [System.Serializable]
+    public class AspectChangeEvent : UnityEvent<float> { }
 
     public string globalTextureName;
     public TextureEvent onTexture;
-
+    public AspectChangeEvent onAspectChange;
 
     private int globalTextureID;
 
@@ -19,6 +22,11 @@ public sealed class GlobalTextureListener : MonoBehaviour
     private void Update()
     {
         var tex = Shader.GetGlobalTexture(globalTextureID);
+        if (tex == null)
+        {
+            return;
+        }
         onTexture.Invoke(tex);
+        onAspectChange.Invoke((float)tex.width / tex.height);
     }
 }
