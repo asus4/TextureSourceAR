@@ -12,7 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20aeb329ba834447b053a5979cb3342, type: 3}
   m_Name: ARBackgroundRendererFeatureExtended
   m_EditorClassIdentifier: 
+--- !u!114 &-4216989479544193518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15eed5a807bf940909dab2e73b9f973e, type: 3}
+  m_Name: BlitToGlobalRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  globalTextureName: _ARBackgroundTexture
+  renderPassEvent: 300
 --- !u!114 &-3564280783808777547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae4d376c05df421b98c5b39b25b0d29, type: 3}
+  m_Name: ARBackgroundRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+--- !u!114 &-1814135152158029640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,9 +80,9 @@ MonoBehaviour:
     probeSamplingDebugTexture: {fileID: 0}
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
-  - {fileID: -3564280783808777547}
+  - {fileID: -1814135152158029640}
   - {fileID: 2602228706025599065}
-  m_RendererFeatureMap: b5b253f1822189ce59f0fa8e38f91c24
+  m_RendererFeatureMap: b84812d9b0e5d2e659f0fa8e38f91c24
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

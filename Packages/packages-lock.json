@@ -19,7 +19,7 @@
       "hash": "5b0f06dbe438a9c06947b96b45b13aa33d80018a"
     },
     "com.github.asus4.texture-source": {
-      "version": "0.3.2",
+      "version": "0.3.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
