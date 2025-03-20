@@ -16,7 +16,6 @@
     }
   ],
   "dependencies": {
-    "com.cysharp.memorypack": "https://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack#1.10.0",
     "com.github-glitchenzo.nugetforunity": "4.3.0",
     "com.github.asus4.arfoundationreplay": "https://github.com/asus4/ARFoundationReplay.git?path=Packages/com.github.asus4.arfoundationreplay#v0.3.0",
     "com.github.asus4.texture-source": "0.3.2",
